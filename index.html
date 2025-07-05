@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skate Kid Dash</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <style>
+    html, body { margin: 0; padding: 0; background: #222; overflow: hidden; }
+    body { display: flex; flex-direction: column; align-items: center; }
+    #gameCanvas { background: #444; display: block; margin: 20px auto; border-radius: 16px; }
+    #mobileControls {
+      display: none;
+      width: 400px;
+      margin: 0 auto;
+      user-select: none;
+    }
+    .btn {
+      background: #111;
+      color: #fff;
+      font-size: 2em;
+      border: none;
+      margin: 8px;
+      border-radius: 12px;
+      flex: 1;
+      padding: 18px 0;
+      opacity: 0.6;
+      transition: opacity 0.1s;
+    }
+    .btn:active { opacity: 1; background: #333; }
+    @media (max-width: 500px) {
+      #gameCanvas { width: 100vw; height: 70vw; max-width: 100vw; max-height: 70vw; }
+      #mobileControls { display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="400" height="600"></canvas>
+  <div id="mobileControls">
+    <button class="btn" id="btnLeft">&#8592;</button>
+    <button class="btn" id="btnJump">&#8593;</button>
+    <button class="btn" id="btnRight">&#8594;</button>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
